@@ -1,0 +1,690 @@
+\documentclass[letterpaper]{article}
+\usepackage{graphics, graphicx, tabularx, subfigure, color, amsmath, calc, verbatim, epsfig, setspace}
+\graphicspath{{./figs/}}
+\usepackage{html}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{alltt}
+\usepackage{fancyhdr}
+
+% Why do we need these packages??!!
+%\usepackage{latexsym}
+%\usepackage{amsmath} %Just in case
+%\usepackage{amsfonts}
+%\usepackage{hyperref}
+
+%Style package (instead of macros.tex)
+\usepackage{tutorial}
+
+\renewcommand{\baselinestretch}{1.1}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}
+\def\urldot{\kern -.10em.\kern -.10em}
+\def\urlhttp{http\kern -.10em\lower -.1ex\hbox{:}\kern -.12em\lower 0ex\hbox{/}\kern -.18em\lower 0ex\hbox{/}}
+
+%% cmaffeo macros
+\newcommand{\window}[1]{{\bf#1}}
+\newcommand{\guiElement}[1]{{\bf#1}}
+\newcommand{\menuItem}[1]{{\bf#1}}
+\newcommand{\sel}[1]{{``#1''}}
+\newcommand{\rep}[1]{{``\bf#1''}}
+\newcommand{\mat}[1]{{``#1''}}
+\newcommand{\tn}[1]{\mathrm{#1}}
+\newcommand{\fig}[1]{Fig.~\ref{fig:#1}}
+\newcommand{\addFig}[3][1.0]{
+  \begin{figure}[!ht] \begin{center} \htmlimage{scale=0}
+  \includegraphics[width=#1\textwidth]{#2}
+  \caption{#3} \label{fig:#2}
+  \end{center} \end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gray box.
+\newlength{\RoundedBoxWidth}
+\newsavebox{\GrayRoundedBox}
+\newenvironment{GrayBox}[1][\dimexpr\textwidth-4.5ex]%
+   {\setlength{\RoundedBoxWidth}{\dimexpr#1}
+    \begin{lrbox}{\GrayRoundedBox}
+       \begin{minipage}{\RoundedBoxWidth}}%
+   {   \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}%
+       \draw node[draw=black,fill=black!10,rounded corners,%
+             inner sep=2ex,text width=\RoundedBoxWidth]%
+             {\usebox{\GrayRoundedBox}};
+    \end{tikzpicture}
+    \end{center}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\newcounter{nitems}[subsection]
+\pagestyle{headings}
+
+%NOT recognized by html:
+%\hoffset 0pt
+%\voffset 0pt
+
+%\oddsidemargin 0.5in
+\topmargin 22pt
+%\headheight 13pt
+%\headsep 19pt
+%\textheight 595pt
+%\textwidth 5.5in
+\footskip 27pt
+%\parindent 0em %use \noindent to disable indentation
+%\parskip 2ex  % We must do this manually with \newline
+               % as we need zero spacing between paragraphs
+               % for Tcl commands
+
+%\topmargin      0.1in
+%\oddsidemargin  0in
+%\evensidemargin 0in
+%\textheight     8.80in
+%\textwidth      6.50in
+%\marginparsep   0.25cm
+%\headheight     0in
+%\headsep        0in
+%----------------------------------------------------------------------------------------
+%	Title Page
+%---------------------------------------------------------------------------------------
+%\begin{titlepage}
+
+%\noindent \bf University of Illinois at Urbana–Champaign\\
+%\bf Computational Biophysics Workshop\\[1cm]
+ 
+ %\begin{center}
+%{\huge \bf Brownian Dynamics Simulation of Liquid-liquid Phase Separation of FUS}\\[0.2cm]
+%{\large Unix Version}
+%\end{center}
+
+%\begin{center}
+%\includegraphics [width=1\textwidth]{defaultImage.jpg}\\[1cm]
+%\end{center}
+
+%\noindent \bf ARBD Developers: Christopher Maffeo, Han-Yi Chou\\[0.5cm]
+%\bf ARBD Tutorial Contributors:\\[0.5cm]
+
+%\begin{center}
+%July 2019
+%\end{center}
+%\end{titlepage}
+\thispagestyle{empty}
+{\bfseries \noindent Aksimentiev Group\\
+Department of Physics,\\
+Center for the Physics of Living Cells and\\
+Beckman Institute for Advanced Science and Technology,\\
+University of Illinois at Urbana-Champaign
+}
+
+
+\vspace*{0.3in}
+\noindent
+\makebox[0pt][l]{\begin{minipage}{\textwidth}
+\begin{center}
+{\Huge\bfseries Brownian dynamics simulation of\\}
+{\Huge\bfseries liquid-liquid phase separation\\}
+%{\Huge\bfseries phase separation\\}
+\end{center}
+
+
+\noindent\rule[-1ex]{\textwidth}{5pt}\\[2.5ex]
+\end{minipage}}
+
+\begin{figure}[!ht]
+\begin{center}
+\htmlimage{scale=0}
+%\includegraphics[width=3.5in]{6_finalPlot_edited}
+\includegraphics[width=2.0in]{intro_fig.pdf}
+%\includegraphics[width=\textwidth]{6_finalPlot}
+\end{center}
+\end{figure}
+
+\begin{minipage}[b]{10cm}
+{\bfseries  
+\noindent Authors: \\
+Swan Htun\\ Ashley Knoerdel\\ Kumar Sarthak\\ Han-Yi Chou\\ Aleksei Aksimentiev }
+
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	Table of Contents
+%---------------------------------------------------------------------------------------
+%\addtocontents{toc}{\setcounter{tocdepth}{1}} % Set depth to 1
+\newpage
+\begin{latexonly}
+\tableofcontents
+%\pagebreak
+\end{latexonly}
+\newpage
+
+
+%----------------------------------------------------------------------------------------
+%	Table of Contents
+%---------------------------------------------------------------------------------------
+
+\section*{\huge Overview}
+This tutorial is designed to investigate the use of Brownian Dynamics on liquid-liquid phase separation of the FUS protein through computational approaches. This tutorial assumes you have a working knowledge of VMD.  If you do not, the VMD tutorial can be found at: \\[0.02cm] 
+
+\begin{center}
+\href{http://www.ks.uiuc.edu/Training/Tutorials/}{http://www.ks.uiuc.edu/Training/Tutorials}.\\[0.02cm]
+\end{center}
+
+Fused in Sarcoma (FUS) is an RNA-binding protein involved in various cellular processes such as DNA repair, RNA transport and damage response. For more information on FUS, please refer to the next section.\\[0.02cm]
+
+Atomic Resolution Brownian Dynamics (ARBD) is code that takes advantage of graphic processing units (GPUs) to facilitate fast simulations that do not have the same limitations as molecular dynamics simulations do.  This will be discussed more in the ARBD section.   \\[0.02cm]
+
+This tutorial is subdivided into four sections. The first covers the basics of building all-atom model of FUS protein, i.e., preparation of the system - generating psf, pdb files. The second section introduces how to run an ARBD simulation techniques, the third covers running the ARBD simulation of wild-type and mutant FUS protein at various environmental conditions, and lastly, the analysis of the simulation data.\\[0.02cm]
+
+
+\newpage
+
+\section{Introduction: FUS protein}
+Biological cells have long been known to use membrane-enclosed compartments (organelles) to isolate biochemical processes, increasing efficiency of these proces-ses and limiting the effects of toxic intermediates~\cite{GENN89}. Organelles that lack such membranes, such as granules and inclusion bodies that are ubiquitous in all eukaryotic cells, were thought to be passive agglomerations of spare biomolecular parts with no known purpose beyond serving as a cellular pantry. Recent experimental work, however, suggests that such membraneless organelles are in fact liquid-like biomolecular condensates that precipitate from cellular cytosol or nucleoplasm.\\[0.02cm]
+ 
+These condensates are formed as a response to specific biochemical signals, and they provide an organelle-like environment for biochemical processes without needing to confine them using a physical barrier~\cite{BANA2017,SHIN2017,BRAN2009,FERI2016,HYMA2014}. Intriguingly, biological condensates of the same type behave as liquid droplets; they can deform, coalesce or undergo fission, but they do not mix with condensates of other types~\cite{SHIN2017}. Furthermore, specific condensate types are able to recruit specific biomolecules, preferentially selecting them from a large number of seem-ingly similar molecules~\cite{BANA2016}. Although we are just beginning to uncover the biological functions of such condensates, they have already been shown to play central roles in the processes of DNA repair and gene regulation~\cite{NAUM2018}. Mutation of the proteins forming the condensates can lead to severe medical conditions, including many neurodegenerative diseases such as amyotrophic lateral sclerosis~\cite{KWIA2009,VANC2009}.\\[0.02cm]
+
+Presently, we do not know the molecular mechanisms prescribing  how these biological condensates are formed, how they recruit target biomolecules, or how they dissolve after fulfilling their function. But the observed behavior of the condensates appears to obey the rules of liquid-liquid phase separation, a subject that has been studied extensively by soft matter physicists. It is therefore conceivable that the microscopic mechanisms governing the condensates behavior can be elucidated through physics-based modeling.
+
+\subsection{Significance of FUS}
+
+Eukaryotic cells use membraneless organelles, such as stress granules and  Cajal bodies, to seclude specific proteins and nucleic acids for high yield biochemical reactions~\cite{BRAN2009,BANA2017}. These organelles, often referred to as biomolecular condensates or ribonucleoprotein granules, have material properties similar to a liquid droplet. 
+Recent studies have shown that these granules are formed by a liquid-liquid phase separation in response to specific biochemical signals~\cite{HYMA2014,SHIN2017,FERI2016}. Although the resulting phase-separated granules have a well-defined inner structure and outer boundaries, they  remain highly dynamic, allowing for rapid exchange of proteins and nucleic acids with the surrounding cytoplasm or nucleoplasm. The bulk of the condensate is formed by the so-called scaffold proteins, that recruit client molecules, such as RNA and RNA binding proteins, into the condensate~\cite{BANA2016}. The scaffold proteins are intrinsically disordered and prone to aggregation.\\[0.02cm]
+
+One major family of scaffold proteins is the FUS (fused in sarcoma) family, which contains proteins that phase separate near DNA damage sites, even at extremely low FUS concentrations~\cite{MAST2013,WANG2018A,LIN2015,YU2015}. The phase transition from a liquid-like to a solid-like state in a FUS condensate is a hallmark of neurodegene-rative diseases such as amyotrophic lateral sclerosis (ALS), which currently has no cure~\cite{MOLL2015,PATE2015}. 
+Other than the failure to maintain a liquid-like state, there is no clear explanation of the sequence--disease relationship observed for FUS mutants.\\[0.1cm]
+
+We have chosen to simulate FUS, a family of proteins consisting of 526 amino acids and several structured and disordered domains. The structure of FUS can be divided into two parts, a prion-like domain ad the RNA binding domain. Both parts contain structured and disordered domains. The prion-like domain has a low sequence compexity, while the RNA binding domain has a notable structured region being an RNA recognition motif. \\[0.02cm]
+
+The interaction between the prion-like domain's tyrosine residues and the RNA binding domain's arginine residues have been experimentally determined to be the cause of FUS's separation behavior. Mutations to these residues can cause phase separation to not occur or the elasticity of the phase to change.  We need to simulate FUS in order to explore liquid-liquid phase separation. Our work could lead to new drug targets for amyotrophic lateral sclerosis, or ALS, because ALS is characterized by a change from a liquid phase separated state to a solid phase separated state.
+
+\newpage
+\section{Introduction: Atomic Resolution Brownian \\ Dynamics (ARBD)}
+Complementing experimental investigations, computational approaches yield a molecular picture of processes that are too small and fast to resolve experimentally in biological and nanotechnological systems. The most widely employed biological simulation method, all-atom MD, describes molecules with atomic resolution. However, MD is computationally expensive and might be overkill for many tasks. Coarse-grain (CG) Brownian dynamics (BD) simulations are a promising alternative for modeling macromolecular complexes.\\[0.02cm]
+
+BD achieves computational economy while keeping molecular-level detail by modeling the solute through point-like particles with parameterized properties but treating solvent molecules implicitly. Hence, CG BD simulations can be used to overcome the constraints of all-atom MD simulations, which are typically limited by computational resources to time and length scales under about 10 microseconds and 30 nanometers.\\[0.02cm]
+
+Atomic Resolution Brownian Dynamics (ARBD) is a code that takes advant-age of GPUs to facilitate fast simulations. Uniquely, ARBD supports models that contain both point-like particles and grid-specified physical particles that possess both position and orientation.
+
+\newpage
+\begin{figure}
+\centering
+\includegraphics[width=0.98\textwidth]{figs/fus_system.pdf}
+\caption{\small
+All-atom and coarse-grained models of a FUS protein. 
+(a)  All-atom model shown using a balls-and-bonds representation. Each domain of FUS is shown in a unique color, and  
+the structured domains are enclosed by a molecular surface. The all-atom models of the structured domains were taken from  the 
+Protein Data Bank,  PDB IDs 5W3N~\cite{MURR2017}, 2LCW~\cite{LIU2013}, 2K1P~\cite{LOUG2009} and 5YVG~\cite{YOSH2018} (from left to right). The disordered parts were modeled using sequence 
+information of unstructured peptides
+%~\x[Would be good to add a reference here]. 
+ ~\cite{YOSH2018}. 
+(b) Coarse-grained model of FUS where the structured and disordered domains of the protein are represented as rigid bodies and beads on a string, respectively. Red and green spheres represent the arginine and tyrosine residues, respectively, and the remaining residues of the unstructured parts are shown as semitransparent blue spheres. 
+}
+\label{fig:FUS}
+\end{figure}
+
+
+\section{Building an all-atom model of FUS protein}
+In this section, we walk through the protocol to build an all-atom MD simulation system consisting of two FUS proteins submerged in a 150~mM KCl solution. We then learn to introduce mutations to the WT sequence and perform MD simulations of all systems. All script files can be found in the all-atom-simulation folder.
+
+\subsection{What is Needed}
+
+We will need two types of files to generate an all-atom model of FUS, a protein data bank (PDB) file which stores atomic coordinates for the system and a topology file that is a database of structural information required to convert a list of residues described in the PDB file to a complete protein structure file (PSF file). You will need both the PSF and PDB files to run an all atom molecular dynamics simulation. The FUS protein has four structured regions (\fig{FUS}) and four disordered regions. The PDB files for the structured regions can be obtained from \href{http://www.rcsb.org}{http://www.rcsb.org} by entering the PDB ID in the search bar. The sequence of the disordered region is available from Ref. ~\cite{YOSH2018}.
+%and a script to generate a psf file. A pdb file can be generated by hand but are also available for many proteins at \href{http://www.pdb.org}{http://www.pdb.org}.  We will use the pdb and psf files to view the structure of FUS in a computer program called VMD, Visual Molecular Dynamics. Using VMD, we can explore the FUS protein using the tools mentioned in the VMD tutorial.  
+
+\subsection{Generating PSF file}
+\subsubsection{Structured Region}
+Once you have downloaded all four PDB files, place them in the all-atom-simulation folder. 
+
+\begin{GrayBox}
+\begin{verbatim}
+>> cd all-atom-simulation/
+>> cp ~/Downloads/*.pdb . 
+\end{verbatim}
+\end{GrayBox}
+
+\noindent We will now create a PSF file for the RNA recogntion motif (RRM) with PDB ID as 2LCW. You can visualize the downloaded PDB file:
+
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd 2lcw.pdb
+\end{verbatim}
+\end{GrayBox}
+
+\noindent Often, the PDB file will have additional crystallized components like ions, other proteins which are not required. You can select the required protein and write a new PDB file using the following commands. These commands must be run in VMD's Tk Console which can be found in VMD Main $>$ Extensions $>$ Tk Console
+
+\begin{GrayBox}
+\begin{verbatim}
+set sel [atomselect top "protein"]
+$sel writepdb protein.pdb
+quit
+\end{verbatim}
+\end{GrayBox}
+
+\noindent In this tutorial we use the CHARMM36 topology files. The protein topology file can be found in toppar/top\_all36\_prot.rtf. Using this we create a new set of PSF and PDB files (that are consistent with each other)
+using the psfgen.tcl script. You can execute this script in the shell by
+typing in the following:
+
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd -dispdev text -e make-psf.tcl
+\end{verbatim}
+\end{GrayBox}
+
+\noindent To get a better idea of this process of generating a psf file, we describe the
+process below (skipping some of the generic portions of the script -- have
+a look at make-psf.tcl to see these other pieces, and the NAMD tutorial).
+In make-psf.tcl, we load protein.pdb into VMD and write out each segment of the protein in to a new pdb file:
+
+\begin{GrayBox}
+\begin{verbatim}
+mol load pdb protein.pdb
+set segnames [lsort -unique [[atomselect top all] get segname]]
+foreach segname $segnames {
+  [atomselect top "segname $segname"] writepdb pro_$segname.pdb  
+}
+\end{verbatim}
+\end{GrayBox}
+
+\noindent For each segment of the protein, we load the coordinates into psfgen and also apply the required 3 terminal and 5 terminal patches.
+\begin{GrayBox}
+\begin{verbatim}
+foreach segname $segnames {
+  segment $segname {
+    auto none
+    first NTER
+    last CTER
+    pdb pro_$segname.pdb 
+  }
+  coordpdb pro_$segname.pdb $segname
+}
+\end{verbatim}
+\end{GrayBox}
+
+\noindent At the end of make-psf.tcl, we write PSF and PDB files into a single
+RRM.psf and RRM.pdb, respectively:
+
+\begin{GrayBox}
+\begin{verbatim}
+writepsf RRM.psf
+writepdb RRM.pdb
+\end{verbatim}
+\end{GrayBox}
+
+
+\subsubsection{Disordered Region}
+For the disordered regions, there are no structures available in the protein data bank. From the amino acid sequence, an initial structure can be prepared using the following softwares. You can use Avogadro, a free to use software available at \href{https://avogadro.cc/}{https://avogadro.cc/}. If you have the sotware, you can go to Build $>$ Insert $>$ Peptide and enter the sequence of the disordered protein. The resulting output would be a PDB file. You can also use VMD's Molefacture utility (\href{https://www.ks.uiuc.edu/Research/vmd/plugins/molefacture//}{https://www.ks.uiuc.edu/Research/vmd/plugins/molefacture/}), or mutate an existing PDB file to create a PDB file for the disordered region. We have made a disordered protein linker and provided the PDB file in the all-atom-simulation/build-2 folder.
+Once you have the PDB file, you can run the make-psf.tcl file to generate a PSF file for the disordered region.
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd -dispdev text -e make-psf.tcl
+\end{verbatim}
+\end{GrayBox} 
+
+
+\subsubsection{Assembling the full structure of FUS}
+Once you have all the individual segments of FUS, both structured and disordered, we will connect each corresponding segment by using VMD in order to build a complete all-atom model of FUS protein. We have provided the PSF and PDB files of all domains in FUS in the build-3 folder. Before we assemble the whole system, we need to place the C terminal end of each component close to the N terminal end of the preceding component to make a peptide bond. This can be done using the move-proteins.tcl script.
+\begin{GrayBox}
+\begin{verbatim}
+>> cd all-atom-simulation/build-3
+>> vmd -dispdev text -e move-proteins.tcl
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent We will go through the important sections of move-proteins.tcl. Feel free to edit the move-proteins.tcl file to rearrange the placement of the components of FUS. 
+First we load all the components in to VMD and modify their segid's for ease of atom selection.
+\begin{GrayBox}
+\begin{verbatim}
+mol load psf 0.psf pdb 0.pdb
+set sel0 [atomselect 0 all]
+$sel0 set segid AP1
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent Then we place the N terminal end of the second component, next to the C terminal end of the first component. We need to determine the place where the N terminal end can be moved. A simple linear approximation from the position of the previous residue will work. However there may be regions of the protein that will clash with other proteins, for which we may need to rotate the protein. We recommend a visual evaluation of the new coordinates to decide the new positions. This is the most tedious step while creating the protein structure.  
+\begin{GrayBox}
+\begin{verbatim}
+set com0 [measure center $sel0 weight mass]
+$sel0 moveby [vecscale -1.0 $com0]
+$sel0 move [transaxis z 45]
+$sel0 moveby {45 45 0}
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent Once the protein has been moved, save the updated PSF and PDB into a new file.
+\begin{GrayBox}
+\begin{verbatim}
+$sel0 writepsf pro_AP1.psf
+$sel0 writepdb pro_AP1.pdb
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent Using these new PSF and PDB files, you can run the make-psf-all.tcl script to generate the complete structure of the FUS protein. 
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd -dispdev text -e make-psf-all.tcl
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent We will go through the important sections of make-psf-all.tcl. First we load all the components in to psfgen and then use NTER and CTER patches for the first and last residues. For the other components we use the LINK patch to create a peptide bond. We also use the DISU patch to create the disulfide linkages observed in the Zinc Finger domain.
+\begin{GrayBox}
+\begin{verbatim}
+patch NTER AP1:1
+patch CTER IP1:526
+patch LINK AP1:36 BP1:37
+patch DISU GP1:71 GP1:74
+\end{verbatim}
+\end{GrayBox} 
+Then, the new PSF and PDB files would be the complete structure of the FUS protein.
+\begin{GrayBox}
+\begin{verbatim}
+writepsf FUS.psf
+writepdb FUS.pdb
+\end{verbatim}
+\end{GrayBox} 
+You can visualize the new system using the following command.
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd FUS.psf FUS.pdb
+\end{verbatim}
+\end{GrayBox} 
+
+\subsection{Mutating the FUS protein}
+We will use the structure of the WT protein generated in the previous section, to introduce relevant mutations.  Change directories to ~/Documents/all-atom-simulation/mutate-protein/ and copy the structure files generated in the last step to this folder.
+
+\begin{GrayBox}
+\begin{verbatim}
+>> cd ~/Documents/all-atom-simulation/mutate-protein/
+>> cp ../build-3/FUS.* .
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent The first series of mutations that we will make is to mutate all tyrosines in the RNA binding domain to arginines. The TCL code present in mutate-protein.tcl will generate a new PSF and PDB with the required mutation. First you need to modify the input and output file names by opening make-protein.tcl in your favorite text editor. Then, you can use VMD to run the TCL code and generate the mutated PSF and PDB.
+
+\begin{GrayBox}
+\begin{verbatim}
+>> vi mutate-protein.tcl
+>> vmd -dispdev text -e mutate-protein.tcl 
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent We will now go through the important sections of the code to understand the mutating procedure. First we load the input PSF and PDB to VMD and find the tyrosine residues that need to be mutated. Note that while selecting the protein, we only select the C-$\alpha$ atoms so that we get only one resid per residue.
+
+\begin{GrayBox}
+\begin{verbatim}
+set segids [lindex $segid_list $i]
+set pro [atomselect top "protein and segid \
+ $segids and name CA and resname TYR"]
+set resid_list [$pro get resid]
+$pro delete
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent Once we have the resid's that need to be mutated, we load the molecule to psfgen. The, we create new PDB files, by modifying the resname of the selected residues and deleting the segment from the old protein.
+\begin{GrayBox}
+\begin{verbatim}
+foreach segment $segmentList {
+    foreach residue $residueList {
+        set sel [atomselect top "resid $residue"]
+        $sel set resname $mutation
+
+    }
+}
+foreach segment $segmentList {
+    set pro [atomselect top "segid $segment"]
+    $pro writepdb pro${segment}.pdb
+    delatom $segment
+}
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent Now the protein loaded into psfgen is missing the segments that we deleted and which carry the mutation. So, we load the segments back in to psfgen. This time, the new segments will have the mutated resname for the selected residues, and psfgen will identify them as the mutated amino acids. The coordinates of non backbone atoms of the new amino acid will be guessed by psfgen. Note, you need to apply NTER and CTER patches to the first and last residues of the protein.
+\begin{GrayBox}
+\begin{verbatim}
+foreach segment $segmentList {
+    segment $segment {
+        first none
+        last none
+        pdb pro${segment}.pdb
+    }
+    coordpdb pro${segment}.pdb
+}
+
+regenerate angles dihedrals
+guesscoord
+\end{verbatim}
+\end{GrayBox}
+\noindent Then you need to write out the new PSF and PDB files.
+\begin{GrayBox}
+\begin{verbatim}
+writepsf $newpsf
+writepdb $newpdb
+\end{verbatim}
+\end{GrayBox}
+\noindent You can then visualize the new files using VMD. Make sure you check the structure of the mutated protein to confirm the presence of the mutations. You can go to VMD Main $>$ Graphical Representations and type in the selection for the mutated residues and check the structure.
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd FUS_mutated.psf FUS_mutated.pdb
+\end{verbatim}
+\end{GrayBox}
+
+\subsection{Running an all-atom simulation of the FUS protein (Optional)}
+\subsubsection{Solvating the system}
+\noindent Before you can start running a simulation, you need to solvate and ionize the protein molecule. The command for this is:
+\begin{GrayBox}
+\begin{verbatim}
+>> cd ~/Documents/all-atom-simulation/solvate-protein/
+>> vmd -dispdev text -e solvate.tcl
+\end{verbatim}
+\end{GrayBox}
+\noindent Make sure you have the right input files in solvate.tcl. In this file, we execute two commands, solvate and autoionize,
+which adds a water box and adds ions, respectively. The solvate command
+\begin{GrayBox}
+\begin{verbatim}
+solvate FUS.psf FUS.pdb -minmax \
+{{-90 -60 -80 } { 90 60 80 }} -o FUS_water
+\end{verbatim}
+\end{GrayBox}
+reads FUS.psf and FUS.pdb files, and puts the protein structure in a water
+box of 180$\times$120$\times$160 {\AA}$^3$
+centered at the origin. If you use a different protein conformation, you can change the box size to make sure that DNA has sufficient padding
+of water around it. You can use the minmax command with a protein selection to check the size of the protein in the following manner.
+\begin{GrayBox}
+\begin{verbatim}
+set sel [atomselect top protein]
+measure minmax $sel
+\end{verbatim}
+\end{GrayBox}
+The new solvated system is stored in PSF and PDB
+files, which are named FUS\_water.psf and FUS\_water.pdb.
+Then, the autoionize command
+\begin{GrayBox}
+\begin{verbatim}
+autoionize -psf FUS_water.psf -pdb FUS_water.pdb \
+-sc 0.15 -cation POT -o FUS_water_ions
+\end{verbatim}
+\end{GrayBox}
+reads FUS\_water.psf and FUS\_water.pdb files, and randomly places potassium and
+chloride ions to achieve a 150 mM concentration. The new PSF and PDB files will
+be written to FUS\_water\_ions.psf and FUS\_water\_ions.pdb files.
+
+\subsubsection{Simulating the system}
+\noindent Move to the simulate-protein directory and copy over the solvated files from the solvate-protein directory.
+\begin{GrayBox}
+\begin{verbatim}
+>> cd ~/Documents/all-atom-simulation/simulate-protein/
+>> cp ../solvate-protein/FUS_water_ions.* .
+\end{verbatim}
+\end{GrayBox}
+\noindent We have created a custom NAMD script for you that takes into input the PSF and PDB files you generated as starting conformation. Then, it minimizes the system to remove bad contacts and runs an all-atom MD simulation at 298 K in the NPT ensemble. For more information on creating the NAMD files, you can follow the NAMD tutorial provided in the Advanced Readings document. You can run the NAMD simulation using the following command.
+\begin{GrayBox}
+\begin{verbatim}
+>> namd2-cpu FUS.namd > FUS.log &
+\end{verbatim}
+\end{GrayBox}
+\noindent We are using the CPU version of NAMD, as we will need the GPU for running the upcoming Brownian Dynamics simulation. As the system size is pretty big ~350,000 atoms, you cannot run this simulation on a local system for a reasonable time. You would need a supercomputer such as Blue Waters or Stampede to run these to reasonable timescales. We have provided a trajectory run for 100 ns, in the following folder, which you can visualize using VMD.
+\begin{GrayBox}
+\begin{verbatim}
+>> cd ~/Documents/all-atom-simulation/FUS_simulation/
+>> vmd FUS.psf FUS.dcd
+\end{verbatim}
+\end{GrayBox}
+Additionally, we have provided a 100 ns MD trajectory of 2 FUS proteins placed with a 30 nucleotide ssRNA. You can try to build a similar system or visualize this system using the following commands.
+\begin{GrayBox}
+\begin{verbatim}
+>> cd ~/Documents/all-atom-simulation/FUS-RNA_simulation/
+>> vmd FUS_RNA.psf FUS_RNA.dcd
+\end{verbatim}
+\end{GrayBox}
+
+
+\newpage
+\section{Brownian Dynamic Simulation of FUS}
+Once you have an all-atom model of FUS, a Brownian dynamics system of the FUS protein can be built using a python script. The temperature, the dimension of the system, time steps, length of the simulation, output period, name of the files can be altered in the python script to create different systems with desired parameters needed for your simulation. The number of proteins and how far apart they are will be specified when generating the BD file, these values will dictate the concentration of the system. \\[0.02cm]
+
+\noindent The concentration of the system can be calculated in the following way: 
+\begin{equation*}
+ \frac{Protein \\num.}{ Avogadro's \\ num.}  * \frac{10 ^ {10}}{Dimensions ^ {3}} = \mu M
+\end{equation*}
+
+\noindent This will yield the molar concentration of the system in $\mu M$.
+
+\subsection{What is Needed}
+
+All the following required files should be in the folder named `fus\_arbd\_simulation' or you may use the psf and pdb files of the all-atom model of FUS protein generated in the previous section (section 3). Building a BD system of FUS protein requires five things: 
+\begin{itemize}
+\item Psf file of the all-atom model of FUS for the atomic coordinates of the protein.
+\item Pdb file of the all-atom model of FUS for the structural information of the protein.
+\item ARBD executable file.
+\item ARBD source code.
+\item Python Script to build the BD system. 
+\end{itemize}
+
+\noindent Once these files are ready, we can prepare the BD system for the Brownian dynamics simulation from the all-atom model. 
+
+\subsection{Building the BD system}
+To build the BD system, we need to modify the parameters in the python script called `createModelMany.py' to build a system with our desired input parameters. 
+
+\begin{GrayBox}
+\begin{verbatim}
+>> cd fus_arbd_simulation/
+>> vi createModelMany.py
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent Input the file names of the psf and pdb files of the all-atom FUS protein where the variables `psf' and `pdb' are declared.
+Further down in the script, there is a variable called `temperature', which is in Kelvin ($K$). This is where we specify the temperature of the system.  
+In the same part of the script there is also a variable called `dimensions' where we will input the dimensions of our system in $\mathring{A}$.  
+Under `output', we can change the name of the output BD file and the associated files. Since we will be running multiple simulations, it would be helpful to alter the name of the output in such a way that is appropriate for your system.
+We will need to specify the number of proteins for the system and how far apart each protein should be before running this python script.  \\[0.02cm]
+
+\noindent To build the BD system of FUS protein, open terminal. In the terminal window, type the following command in a single line: 
+
+\begin{GrayBox}
+\begin{verbatim}
+>> python script.py <#_prot_in_x> <#_prot_in_y> <#_prot_in_z> 
+<dist_inbetween>
+\end{verbatim}
+\end{GrayBox}
+
+\noindent For example, to create a system with eight proteins that are 150 $\mathring{A}$ apart, the command would be:
+\begin{GrayBox}
+\begin{verbatim}
+>> python createModelMany.py 2 2 2 150
+\end{verbatim}
+\end{GrayBox}
+
+\noindent Running this script would produce a total of four files: output\_name.pdb, output\_name.psf, output\_name.particles.txt, output\_name.bd. The psf and pdb files contain the coordinates and structural information of the FUS BD system.
+
+\newpage
+\section{ARBD simulation}
+After you have created the necessary files in the previous section (section 4), we are now ready to run the ARBD simulation of FUS. You can visualize what the system looks like by the following command:
+
+ \begin{GrayBox}
+\begin{verbatim}
+>> vmd output_name.psf output_name.pdb
+\end{verbatim}
+\end{GrayBox}
+
+\subsubsection{Simulation of WT FUS protein}
+Now we will run the simulation of the WT FUS protein system. We will run the same system at various temperatures as an example of how environmental conditions can affect the phase separation properties of FUS. In total, we will run six simulations of WT FUS at different temperatures in NVT conditions. The temperatures are: $295K, 350K, 400K, 410K, 430K, 450K$.  Before running the simulation, create a sub-folder called `output' to save the output files of the simulation. \\[0.02cm]
+
+\begin{GrayBox}
+\begin{verbatim}
+>> mkdir output
+\end{verbatim}
+\end{GrayBox} 
+
+\noindent ARBD simulation can be run with the following command:
+
+\begin{GrayBox}
+\begin{verbatim}
+>> ./arbd_fus -g <gpu_num> <bd_file_name> <loc/>
+<output_file_name>
+\end{verbatim}
+\end{GrayBox}
+
+\noindent For example, to run the ARBD simulation on GPU 1 using the `fus.bd' file and saving the output as `fus' in the folder called `output': 
+
+\begin{GrayBox}
+\begin{verbatim}
+>> ./arbd_fus -g 1 fus.bd output/fus
+\end{verbatim}
+\end{GrayBox}
+
+\noindent This will produce several files including momentum.dcd and dcd file. The dcd file is important as it contains the trajectory information of the system over the simulation period and will be used for analysis. After 24 hours of simulation period, we can observe the how the system has evolved over time. 
+
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd file_name.psf output/file_name.dcd
+\end{verbatim}
+\end{GrayBox}
+
+\subsubsection{Simulation of mutant FUS protein}
+We will now introduce a mutation to the FUS protein and run simulations at various temperatures to compare the behavior of the WT and mutated FUS proteins to see how certain mutations affect the phase-separation process of FUS. We can use the same mutated all-atom model of FUS protein that was created in the section 3.3. Replace the pdb and psf files with the mutated FUS protein's pdb and psf file names in the `createModelMany.py' script, then continue building the system the same way we did in section 4.2. Be sure to place the mutated version of the protein in a separate folder or provide a different name under the `output' variable from the WT protein in the `createModelMany.py' script when producing the BD system. Otherwise the WT files will be overwritten and you will have to rebuild the system. We will run the mutant at the same temperatures and conditions as the WT protein.
+
+\newpage
+\section{Analysis of the Trajectory Data}
+\subsection{Analyzing the all-atom simulations}
+In this section, we will analyze the two all-atom simulation trajectories that were provided to you. You can change directories to the all-atom-simulation/analysis directory using the following command.
+\begin{GrayBox}
+\begin{verbatim}
+>> cd all-atom-simulation/analysis
+\end{verbatim}
+\end{GrayBox}
+\subsubsection{Arginine-Tyrosine contacts}
+Recent experimental work has highlighted the connection between arginine and tyrosine residues in the disordered FUS domains and the ability to phase separate~\cite{WANG2018A}. We will calculate the number of arginine-tyrosine contacts that are formed during the single protein simulation and also in the two FUS--one RNA simulation. You can do so, by running the count-contacts.tcl script as follows.
+\begin{GrayBox}
+\begin{verbatim}
+>> vmd -dispdev text -e count-contacts.tcl
+\end{verbatim}
+\end{GrayBox}
+
+\noindent The script counts the number of tyrosine residues within 5 {\AA} of any arginine residue. If there is at least one arginine residue present, it'll consider the arginine residue as in contact. The selection for counting the tyrosine residues is as follows:
+\begin{GrayBox}
+\begin{verbatim}
+set sel [atomselect top "(resname TYR and name CA) \
+and within 5 of (resname ARG and segid $seg and resid $res)"]
+set cnt [$sel num]
+\end{verbatim}
+\end{GrayBox}
+
+\noindent The script will output a .dat file that enlists two columns, one with the time and the other with the number of arginines in contact. You can use your favorite graphing software to visualize this. If you want to use xmgrace, you can use the following command. The output graph should look similar to \fig{example}a.
+
+\begin{GrayBox}
+\begin{verbatim}
+xmgrace contacts.dat
+\end{verbatim}
+\end{GrayBox}
+
+\noindent You can now modify this script to calculate the number of arginine-tyrosine contacts that are formed in the two FUS-- one RNA simulation. Note that in this case there will be inter and intra ARG-TYR contacts. Try to differentiate between both these types and make a separate plot for both.
+
+\subsubsection{Calculating FRET efficiency}
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{bibfiles/journals_long,bibfiles/group,bibfiles/tbpub,bibfiles/loomis,bibfiles/unpublished}
+\end{document}
