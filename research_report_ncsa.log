@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.7.17)  20 JUL 2019 20:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.7.17)  21 JUL 2019 02:24
 entering extended mode
 **./research_report_ncsa.tex
 (research_report_ncsa.tex
@@ -414,7 +414,11 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 LaTeX Warning: Unused global option(s):
     [12ptr].
 
-(research_report_ncsa.aux)
+(research_report_ncsa.aux
+
+LaTeX Warning: Label `fig:fus_430' multiply defined.
+
+)
 \openout1 = `research_report_ncsa.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -522,12 +526,12 @@ LaTeX Info: Redefining \nameref on input line 22.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-<fus400_64_first.pdf, id=51, 614.295pt x 588.24847pt>
+<fus400_64_first.pdf, id=47, 614.295pt x 588.24847pt>
 File: fus400_64_first.pdf Graphic file (type pdf)
 <use fus400_64_first.pdf>
 Package pdftex.def Info: fus400_64_first.pdf  used on input line 34.
 (pdftex.def)             Requested size: 170.71652pt x 163.47874pt.
-<all_atom_fus1.pdf, id=52, 794.97pt x 614.295pt>
+<all_atom_fus1.pdf, id=48, 794.97pt x 614.295pt>
 File: all_atom_fus1.pdf Graphic file (type pdf)
 <use all_atom_fus1.pdf>
 Package pdftex.def Info: all_atom_fus1.pdf  used on input line 36.
@@ -547,8 +551,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [2]
 Overfull \hbox (3.86575pt too wide) in paragraph at lines 51--52
-\OT1/cmr/m/n/10 (LLPS) process and displays liquid-like properties [1]. In this
- study, we investigate various conditions
+\OT1/cmr/m/n/10 (LLPS) process and displays liquid-like properties [[]]. In thi
+s study, we investigate various conditions
  []
 
 
@@ -563,33 +567,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
 
 Overfull \hbox (2.78252pt too wide) in paragraph at lines 59--60
-\OT1/cmr/m/n/10 frontotemporal dementia (FTD) [4]. Physical process involved in
- biomolecular condensate formation
+\OT1/cmr/m/n/10 frontotemporal dementia (FTD) [[]]. Physical process involved i
+n biomolecular condensate formation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 
-Overfull \hbox (8.20947pt too wide) in paragraph at lines 74--77
+Overfull \hbox (8.20947pt too wide) in paragraph at lines 73--76
 \OT1/cmr/m/n/10 facilitate fast simulations and achieves better computational e
 fficiency for large systems in comparison
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--77
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
 
  []
 
-<all_atom_bd.pdf, id=107, 778.30913pt x 267.25848pt>
+<all_atom_bd.pdf, id=128, 778.30913pt x 267.25848pt>
 File: all_atom_bd.pdf Graphic file (type pdf)
 <use all_atom_bd.pdf>
-Package pdftex.def Info: all_atom_bd.pdf  used on input line 82.
+Package pdftex.def Info: all_atom_bd.pdf  used on input line 81.
 (pdftex.def)             Requested size: 289.07999pt x 99.26741pt.
 
-Overfull \hbox (13.97078pt too wide) in paragraph at lines 88--89
+Overfull \hbox (13.97078pt too wide) in paragraph at lines 87--88
 \OT1/cmr/m/n/10 simulations of 8 WT FUS proteins are run at $295\OML/cmm/m/it/1
 0 K; \OT1/cmr/m/n/10 350\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 400\OML/cmm/m/it/10
  K; \OT1/cmr/m/n/10 410\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 415\OML/cmm/m/it/10 
@@ -599,56 +613,75 @@ K; \OT1/cmr/m/n/10 420\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 425\OML/cmm/m/it/10 K
  []
 
 [4 <./all_atom_bd.pdf, page is rotated 90 degrees>]
-<fus350_first.pdf, id=130, 794.97pt x 614.295pt>
+<fus350_first.pdf, id=150, 794.97pt x 614.295pt>
 File: fus350_first.pdf Graphic file (type pdf)
 <use fus350_first.pdf>
-Package pdftex.def Info: fus350_first.pdf  used on input line 99.
+Package pdftex.def Info: fus350_first.pdf  used on input line 98.
 (pdftex.def)             Requested size: 170.71652pt x 131.9115pt.
-<fus350_8_last.pdf, id=131, 793.65643pt x 411.7306pt>
+<fus350_8_last.pdf, id=151, 793.65643pt x 411.7306pt>
 File: fus350_8_last.pdf Graphic file (type pdf)
 <use fus350_8_last.pdf>
-Package pdftex.def Info: fus350_8_last.pdf  used on input line 101.
+Package pdftex.def Info: fus350_8_last.pdf  used on input line 100.
 (pdftex.def)             Requested size: 227.62204pt x 118.08577pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 101.
+(Font)              <8> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 101.
-<fus430_vdw_first.pdf, id=132, 794.97pt x 614.295pt>
+(Font)              <6> on input line 100.
+<fus430_vdw_first.pdf, id=152, 794.97pt x 614.295pt>
 File: fus430_vdw_first.pdf Graphic file (type pdf)
 <use fus430_vdw_first.pdf>
-Package pdftex.def Info: fus430_vdw_first.pdf  used on input line 110.
+Package pdftex.def Info: fus430_vdw_first.pdf  used on input line 109.
 (pdftex.def)             Requested size: 170.71652pt x 131.9115pt.
-<fus440_end.pdf, id=133, 794.97pt x 614.295pt>
+<fus440_end.pdf, id=153, 794.97pt x 614.295pt>
 File: fus440_end.pdf Graphic file (type pdf)
 <use fus440_end.pdf>
-Package pdftex.def Info: fus440_end.pdf  used on input line 112.
+Package pdftex.def Info: fus440_end.pdf  used on input line 111.
 (pdftex.def)             Requested size: 227.62204pt x 175.89137pt.
+<count_contact.pdf, id=154, 867.24pt x 465.4188pt>
+File: count_contact.pdf Graphic file (type pdf)
+<use count_contact.pdf>
+Package pdftex.def Info: count_contact.pdf  used on input line 121.
+(pdftex.def)             Requested size: 256.0748pt x 137.42517pt.
+<contact_fus.pdf, id=155, 285.38832pt x 235.42303pt>
+File: contact_fus.pdf Graphic file (type pdf)
+<use contact_fus.pdf>
+Package pdftex.def Info: contact_fus.pdf  used on input line 123.
+(pdftex.def)             Requested size: 142.26378pt x 117.35918pt.
  [5 <./fus350_first.pdf, page is rotated 90 degrees> <./fus350_8_last.pdf, page
  is rotated 90 degrees> <./fus430_vdw_first.pdf, page is rotated 90 degrees> <.
-/fus440_end.pdf, page is rotated 90 degrees>] [6] [7]
-Overfull \hbox (10.07155pt too wide) in paragraph at lines 132--138
-\OT1/cmr/bx/n/10 Accelerated by Disease Mutation. Cell. 2015. [2] A. Mullard, B
-iomolecular Condensates
+/fus440_end.pdf, page is rotated 90 degrees>]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
  []
 
-[8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+[6 <./count_contact.pdf> <./contact_fus.pdf>] (research_report_ncsa.bbl)
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
  (research_report_ncsa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
 Package rerunfilecheck Info: File `research_report_ncsa.out' has not changed.
-(rerunfilecheck)             Checksum: 47CD357B55186CB14647AE11D86E105C;641.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
+(rerunfilecheck)             Checksum: 89C345E23FE0E14510D29B7415F15F15;603.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
- 13425 strings out of 494889
- 237909 string characters out of 3176897
- 299878 words of memory out of 3000000
- 16868 multiletter control sequences out of 15000+200000
- 7587 words of font info for 27 fonts, out of 3000000 for 9000
+ 13460 strings out of 494889
+ 238515 string characters out of 3176897
+ 300173 words of memory out of 3000000
+ 16886 multiletter control sequences out of 15000+200000
+ 8232 words of font info for 29 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 40i,10n,49p,965b,433s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,10n,49p,1265b,433s stack positions out of 5000i,500n,10000p,200000b,50000s
 </Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb></Users/swan.h/Library/Application Support/MiKTeX
 /texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/swan.h/Librar
@@ -661,11 +694,14 @@ mr12.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts
 /type1/public/amsfonts/cm/cmr7.pfb></Users/swan.h/Library/Application Support/M
 iKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/swan.h/Lib
 rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/font
-s/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on research_report_ncsa.pdf (8 pages, 4274281 bytes).
+mr9.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></Users/swan.h/Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/swan.h/L
+ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
+/cmti10.pfb>
+Output written on research_report_ncsa.pdf (7 pages, 4625986 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 325 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
