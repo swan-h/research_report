@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.7.17)  21 JUL 2019 02:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.7.17)  27 JUL 2019 10:46
 entering extended mode
 **./research_report_ncsa.tex
 (research_report_ncsa.tex
@@ -410,31 +410,91 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 \sf@top=\skip59
 \sf@bottom=\skip60
 )
+("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ams
+math/amsmath.sty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip61
+
+For additional information on amsmath, use the `?' option.
+
+("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ams
+math/amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ams
+math/amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks30
+\ex@=\dimen142
+))
+("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ams
+math/amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+)
+("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ams
+math/amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count125
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count126
+\leftroot@=\count127
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count128
+\DOTSCASE@=\count129
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count130
+\c@MaxMatrixCols=\count131
+\dotsspace@=\muskip11
+\c@parentequation=\count132
+\dspbrk@lvl=\count133
+\tag@help=\toks31
+\row@=\count134
+\column@=\count135
+\maxfields@=\count136
+\andhelp@=\toks32
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks33
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks34
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
 
 LaTeX Warning: Unused global option(s):
     [12ptr].
 
-(research_report_ncsa.aux
-
-LaTeX Warning: Label `fig:fus_430' multiply defined.
-
-)
+(research_report_ncsa.aux)
 \openout1 = `research_report_ncsa.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -470,22 +530,22 @@ LaTeX Font Info:    ... okay on input line 22.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count125
+\c@lstlisting=\count137
 
 ("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/context/b
 ase/mkii/supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen142
-\scratchbox=\box32
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen143
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count138
+\scratchdimen=\dimen151
+\scratchbox=\box34
+\nofMPsegments=\count139
+\nofMParguments=\count140
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count141
+\MPscratchDim=\dimen152
+\MPnumerator=\count142
+\makeMPintoPDFobject=\count143
+\everyMPtoPDFconversion=\toks36
 )
 ("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/obe
 rdiek/epstopdf-base.sty"
@@ -502,8 +562,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 22.
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 23.
 
 ("/Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyp
 erref/nameref.sty"
@@ -513,11 +573,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 berdiek/gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count132
+\c@section@level=\count144
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
  (research_report_ncsa.out)
 (research_report_ncsa.out)
 \@outlinefile=\write3
@@ -526,182 +586,210 @@ LaTeX Info: Redefining \nameref on input line 22.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-<fus400_64_first.pdf, id=47, 614.295pt x 588.24847pt>
+<fus400_64_first.pdf, id=43, 614.295pt x 588.24847pt>
 File: fus400_64_first.pdf Graphic file (type pdf)
 <use fus400_64_first.pdf>
-Package pdftex.def Info: fus400_64_first.pdf  used on input line 34.
+Package pdftex.def Info: fus400_64_first.pdf  used on input line 35.
 (pdftex.def)             Requested size: 170.71652pt x 163.47874pt.
-<all_atom_fus1.pdf, id=48, 794.97pt x 614.295pt>
+<all_atom_fus1.pdf, id=44, 794.97pt x 614.295pt>
 File: all_atom_fus1.pdf Graphic file (type pdf)
 <use all_atom_fus1.pdf>
-Package pdftex.def Info: all_atom_fus1.pdf  used on input line 36.
+Package pdftex.def Info: all_atom_fus1.pdf  used on input line 37.
 (pdftex.def)             Requested size: 199.16928pt x 153.90143pt.
  [1
 
 {/Users/swan.h/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/pdf
 tex.map} <./fus400_64_first.pdf> <./all_atom_fus1.pdf, page is rotated 90 degre
-es>] (research_report_ncsa.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
-)
+es>] (research_report_ncsa.toc)
 \tf@toc=\write4
 \openout4 = `research_report_ncsa.toc'.
 
  [2]
-Overfull \hbox (3.86575pt too wide) in paragraph at lines 51--52
-\OT1/cmr/m/n/10 (LLPS) process and displays liquid-like properties [[]]. In thi
-s study, we investigate various conditions
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Overfull \hbox (2.78252pt too wide) in paragraph at lines 59--60
-\OT1/cmr/m/n/10 frontotemporal dementia (FTD) [[]]. Physical process involved i
-n biomolecular condensate formation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
  []
 
+<together_b.png, id=123, 845.1575pt x 394.97563pt>
+File: together_b.png Graphic file (type png)
+<use together_b.png>
+Package pdftex.def Info: together_b.png  used on input line 80.
+(pdftex.def)             Requested size: 433.62pt x 202.65231pt.
 
-Overfull \hbox (8.20947pt too wide) in paragraph at lines 73--76
-\OT1/cmr/m/n/10 facilitate fast simulations and achieves better computational e
-fficiency for large systems in comparison
+Overfull \hbox (6.82866pt too wide) in paragraph at lines 80--81
+ [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--76
-
- []
-
-<all_atom_bd.pdf, id=128, 778.30913pt x 267.25848pt>
-File: all_atom_bd.pdf Graphic file (type pdf)
-<use all_atom_bd.pdf>
-Package pdftex.def Info: all_atom_bd.pdf  used on input line 81.
-(pdftex.def)             Requested size: 289.07999pt x 99.26741pt.
-
-Overfull \hbox (13.97078pt too wide) in paragraph at lines 87--88
-\OT1/cmr/m/n/10 simulations of 8 WT FUS proteins are run at $295\OML/cmm/m/it/1
-0 K; \OT1/cmr/m/n/10 350\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 400\OML/cmm/m/it/10
- K; \OT1/cmr/m/n/10 410\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 415\OML/cmm/m/it/10 
-K; \OT1/cmr/m/n/10 420\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 425\OML/cmm/m/it/10 K
-; \OT1/cmr/m/n/10 430\OML/cmm/m/it/10 K; \OT1/cmr/m/n/10 440\OML/cmm/m/it/10 K$
-
- []
-
-[4 <./all_atom_bd.pdf, page is rotated 90 degrees>]
-<fus350_first.pdf, id=150, 794.97pt x 614.295pt>
+[4 <./together_b.png>]
+<fus350_first.pdf, id=136, 794.97pt x 614.295pt>
 File: fus350_first.pdf Graphic file (type pdf)
 <use fus350_first.pdf>
-Package pdftex.def Info: fus350_first.pdf  used on input line 98.
+Package pdftex.def Info: fus350_first.pdf  used on input line 101.
 (pdftex.def)             Requested size: 170.71652pt x 131.9115pt.
-<fus350_8_last.pdf, id=151, 793.65643pt x 411.7306pt>
+<fus350_8_last.pdf, id=137, 793.65643pt x 411.7306pt>
 File: fus350_8_last.pdf Graphic file (type pdf)
 <use fus350_8_last.pdf>
-Package pdftex.def Info: fus350_8_last.pdf  used on input line 100.
+Package pdftex.def Info: fus350_8_last.pdf  used on input line 103.
 (pdftex.def)             Requested size: 227.62204pt x 118.08577pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 100.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 100.
-<fus430_vdw_first.pdf, id=152, 794.97pt x 614.295pt>
-File: fus430_vdw_first.pdf Graphic file (type pdf)
-<use fus430_vdw_first.pdf>
-Package pdftex.def Info: fus430_vdw_first.pdf  used on input line 109.
-(pdftex.def)             Requested size: 170.71652pt x 131.9115pt.
-<fus440_end.pdf, id=153, 794.97pt x 614.295pt>
+<fus450_first.pdf, id=138, 473.07208pt x 455.57712pt>
+File: fus450_first.pdf Graphic file (type pdf)
+<use fus450_first.pdf>
+Package pdftex.def Info: fus450_first.pdf  used on input line 110.
+(pdftex.def)             Requested size: 170.71652pt x 164.40387pt.
+<fus440_end.pdf, id=139, 794.97pt x 614.295pt>
 File: fus440_end.pdf Graphic file (type pdf)
 <use fus440_end.pdf>
-Package pdftex.def Info: fus440_end.pdf  used on input line 111.
+Package pdftex.def Info: fus440_end.pdf  used on input line 112.
 (pdftex.def)             Requested size: 227.62204pt x 175.89137pt.
-<count_contact.pdf, id=154, 867.24pt x 465.4188pt>
-File: count_contact.pdf Graphic file (type pdf)
-<use count_contact.pdf>
-Package pdftex.def Info: count_contact.pdf  used on input line 121.
-(pdftex.def)             Requested size: 256.0748pt x 137.42517pt.
-<contact_fus.pdf, id=155, 285.38832pt x 235.42303pt>
-File: contact_fus.pdf Graphic file (type pdf)
-<use contact_fus.pdf>
-Package pdftex.def Info: contact_fus.pdf  used on input line 123.
-(pdftex.def)             Requested size: 142.26378pt x 117.35918pt.
- [5 <./fus350_first.pdf, page is rotated 90 degrees> <./fus350_8_last.pdf, page
- is rotated 90 degrees> <./fus430_vdw_first.pdf, page is rotated 90 degrees> <.
-/fus440_end.pdf, page is rotated 90 degrees>]
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+<fus350_density.pdf, id=140, 476.6488pt x 477.9148pt>
+File: fus350_density.pdf Graphic file (type pdf)
+<use fus350_density.pdf>
+Package pdftex.def Info: fus350_density.pdf  used on input line 119.
+(pdftex.def)             Requested size: 199.16928pt x 199.69461pt.
+<fus450_8_den.pdf, id=141, 484.83165pt x 484.8242pt>
+File: fus450_8_den.pdf Graphic file (type pdf)
+<use fus450_8_den.pdf>
+Package pdftex.def Info: fus450_8_den.pdf  used on input line 121.
+(pdftex.def)             Requested size: 199.16928pt x 199.1639pt.
+<transition.png, id=142, 420.6114pt x 315.8199pt>
+File: transition.png Graphic file (type png)
+<use transition.png>
+Package pdftex.def Info: transition.png  used on input line 128.
+(pdftex.def)             Requested size: 199.16928pt x 149.54375pt.
+<fft.png, id=143, 420.6114pt x 310.761pt>
+File: fft.png Graphic file (type png)
+<use fft.png>
+Package pdftex.def Info: fft.png  used on input line 130.
+(pdftex.def)             Requested size: 199.16928pt x 147.1483pt.
+
+Underfull \hbox (badness 2088) in paragraph at lines 130--130
+[]\OT1/cmr/m/n/8 (b) |FFT of the density maps of the trajectory
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 130--130
+\OT1/cmr/m/n/8 data obtained from 8 ARBD simulations at 8
+ []
+
+<contacts.png, id=144, 722.7pt x 463.2507pt>
+File: contacts.png Graphic file (type png)
+<use contacts.png>
+Package pdftex.def Info: contacts.png  used on input line 137.
+(pdftex.def)             Requested size: 227.62204pt x 145.90353pt.
+<all_atom_arg_tyr6.pdf, id=145, 567.87437pt x 488.27733pt>
+File: all_atom_arg_tyr6.pdf Graphic file (type pdf)
+<use all_atom_arg_tyr6.pdf>
+Package pdftex.def Info: all_atom_arg_tyr6.pdf  used on input line 139.
+(pdftex.def)             Requested size: 170.71652pt x 146.7898pt.
+
+Underfull \hbox (badness 4266) in paragraph at lines 139--139
+\OT1/cmr/m/n/8 are highlighted using blue and magenta,
+ []
+
+[5 <./fus350_first.pdf, page is rotated 90 degrees> <./fus350_8_last.pdf, page 
+is rotated 90 degrees> <./fus450_first.pdf, page is rotated 90 degrees> <./fus4
+40_end.pdf, page is rotated 90 degrees>]
+Overfull \hbox (4.69904pt too wide) in paragraph at lines 150--152
+\OT1/cmr/m/n/10 caused by the condensation into a dense phase [[]]. LLPS is dri
+ven by the exchange of macromolecule/
+ []
+
+
+Overfull \hbox (1.95941pt too wide) in paragraph at lines 150--152
+\OT1/cmr/m/n/10 water interactions for macromolecule/macromolecule and water/wa
+ter interactions under conditions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
-[6 <./count_contact.pdf> <./contact_fus.pdf>] (research_report_ncsa.bbl)
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
+[6 <./fus350_density.pdf> <./fus450_8_den.pdf> <./transition.png> <./fft.png>]
+Overfull \hbox (10.089pt too wide) in paragraph at lines 157--158
+\OT1/cmr/m/n/10 spaced wave lengths and hence, a large wavenumber. On the other
+ hand, if the system is homogeneous,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+[7 <./contacts.png> <./all_atom_arg_tyr6.pdf, page is rotated 90 degrees>]
+Overfull \hbox (0.68051pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 concentration threshold for the LLPS process, akin to how we de
+termined the temperature threshold
+ []
+
+[8] (research_report_ncsa.bbl) [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
  (research_report_ncsa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
 Package rerunfilecheck Info: File `research_report_ncsa.out' has not changed.
-(rerunfilecheck)             Checksum: 89C345E23FE0E14510D29B7415F15F15;603.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+(rerunfilecheck)             Checksum: E3170038F5B0B5FD42D02687932C266E;544.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 184.
  ) 
 Here is how much of TeX's memory you used:
- 13460 strings out of 494889
- 238515 string characters out of 3176897
- 300173 words of memory out of 3000000
- 16886 multiletter control sequences out of 15000+200000
- 8232 words of font info for 29 fonts, out of 3000000 for 9000
+ 14084 strings out of 494889
+ 246044 string characters out of 3176897
+ 314546 words of memory out of 3000000
+ 17478 multiletter control sequences out of 15000+200000
+ 9974 words of font info for 36 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 40i,10n,49p,1265b,433s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,9n,49p,1269b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 </Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb></Users/swan.h/Library/Application Support/MiKTeX
 /texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/swan.h/Librar
 y/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi
 10.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></Users/swan.h/Library/Application Support/Mi
-KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/swan.h/Lib
+ype1/public/amsfonts/cm/cmmi7.pfb></Users/swan.h/Library/Application Support/Mi
+KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/swan.h/Lib
 rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></Users/swan.h/Library/Application Support/M
-iKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/swan.h/Lib
-rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mr9.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></Users/swan.h/Library/Application Support/
-MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/swan.h/L
+mmi9.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></Users/swan.h/Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/swan.h/L
 ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmti10.pfb>
-Output written on research_report_ncsa.pdf (7 pages, 4625986 bytes).
+/cmr6.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/public/amsfonts/cm/cmr8.pfb></Users/swan.h/Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr9.pfb></Users/swan.h/Li
+brary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></Users/swan.h/Library/Application Support/MiKTeX/texmfs/install/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on research_report_ncsa.pdf (9 pages, 5353299 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

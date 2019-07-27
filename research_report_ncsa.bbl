@@ -11,12 +11,6 @@ Hao Deng, Kai Gao, and Joseph Jankovic.
 \newblock The role of fus gene variants in neurodegenerative diseases.
 \newblock {\em Nature reviews. Neurology}, 10, 05 2014.
 
-\bibitem{Best_18}
-Gregory Dignon, Wenwei Zheng, Young C.~Kim, Robert Best, and Jeetain Mittal.
-\newblock Sequence determinants of protein phase behavior from a coarse-grained
-  model.
-\newblock {\em PLOS Computational Biology}, 14:e1005941, 01 2018.
-
 \bibitem{Banani_17}
 Salman F~Banani, Hyun Lee, Anthony A~Hyman, and Michael K~Rosen.
 \newblock Biomolecular condensates: organizers of cellular biochemistry.
@@ -51,5 +45,14 @@ Jie Wang, Jeong-Mo Choi, Alex Holehouse, Hyun Lee, Xiaojie Zhang, Marcus
 \newblock A molecular grammar governing the driving forces for phase separation
   of prion-like rna binding proteins.
 \newblock {\em Cell}, 174, 06 2018.
+
+\bibitem{Ali_18}
+Takuya Yoshizawa, Rustam Ali, Jenny Jiou, Ho~Yee~Joyce Fung, Kathleen Burke,
+  Seung Joong~Kim, Yuan Lin, William B~Peeples, Daniel Saltzberg, Michael
+  Soniat, Jordan Baumhardt, Rudolf Oldenbourg, Andrej Sali, Nicolas Fawzi,
+  Michael K~Rosen, and Yuh~Min Chook.
+\newblock Nuclear import receptor inhibits phase separation of fus through
+  binding to multiple sites.
+\newblock {\em Cell}, 173, 04 2018.
 
 \end{thebibliography}
